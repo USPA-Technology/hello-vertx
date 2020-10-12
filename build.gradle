@@ -5,6 +5,8 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
 
+sourceCompatibility = 1.8
+
 repositories {
  	mavenLocal()
     mavenCentral()
@@ -89,7 +91,7 @@ task buildMainHttpStarter(type: Jar) {
     manifest {
    		attributes ('Implementation-Title': 'MainHttpStarter', 
         			'Implementation-Version': version ,
-        			'Main-Class': 'hello.vertx.HelloWorld',
+        			'Main-Class': 'hello.vertx.HelloVertxApiServer',
         			'Class-Path' : getClasspathStringJars() 
         			)
 	}
