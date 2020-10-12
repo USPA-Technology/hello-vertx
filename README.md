@@ -2,6 +2,11 @@
 
 Sample Vertx Project for self-learning at USPA.tech
 
+## How to run
+
+* chmod +x jar-build-and-run.sh
+* ./jar-build-and-run.sh
+
 ## Targets
 
 * Learn how to use Vertx for API building
