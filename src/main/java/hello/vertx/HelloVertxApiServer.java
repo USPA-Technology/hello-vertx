@@ -1,5 +1,8 @@
 package hello.vertx;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import hello.router.CustomerRouter;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpMethod;
@@ -15,7 +18,15 @@ public class HelloVertxApiServer {
 		Router mainRouter = Router.router(vertx);
 		
 		mainRouter.route(HttpMethod.GET, "/").handler(routingContext -> {
-			routingContext.response().end("Hello Vertx");
+			String fromHostInfo = ""; 
+			try {
+				fromHostInfo = " from " + InetAddress.getLocalHost().toString();
+			} catch (UnknownHostException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			routingContext.response().end("Hello Vertx" + fromHostInfo);
 		});
 
 		Router customerRouter = CustomerRouter.get(vertx);
