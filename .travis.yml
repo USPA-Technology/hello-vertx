@@ -1,0 +1,17 @@
+sudo: required
+services:
+   - docker
+   
+before_install:
+   - docker build -t phan2410/hello-vertx .
+   
+script:
+   - echo "skipping tests"
+   
+after_success:
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - docker push phan2410/hello-vertx
+
+deploy:
+   provider: elasticbeanstalk
+   region:   
