@@ -16,6 +16,8 @@ RUN		export PATH=/tmp/gradle/bin:${PATH} && \
 		
 FROM amazoncorretto/amazoncorretto:11-alpine-jdk
 
+EXPOSE 8080
+
 WORKDIR /usr/app
 COPY 	--from=builder /usr/app/BUILD-OUTPUT .
 		
