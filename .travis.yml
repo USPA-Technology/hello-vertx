@@ -17,7 +17,7 @@ deploy:
    region:   "ap-south-1"
    app:      "hello-vertx"
    env:      "HelloVertx-env"
-   bucket_name: "elasticbeanstalk-ap-south-1-951208296725"
+   bucket_name: "elasticbeanstalk-ap-south-1-988383364451"
    bucket_path: "hello-vertx"
    on:
       branch: main
